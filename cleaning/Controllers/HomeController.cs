@@ -1,4 +1,5 @@
-﻿using System;
+﻿using cleaning.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -11,13 +12,13 @@ namespace cleaning.Controllers
 {
     public class HomeController : Controller
     {
-        public async Task<ActionResult> Estimate(string sname, string semail, string smessage, string sphone)
+        [HttpPost]
+        public ActionResult Estimate(string sname, string semail, string sphone)
         {
-            var name = sname;
-            var email = semail;
-            var messages = smessage;
-            var phone = sphone;
-            return RedirectToAction("Index");
+            int? samount = 100;
+            var vm = new EstimateViewModel(sname, semail, sphone, samount);
+            // return RedirectToAction("Confirmation", vm);
+            return View("Confirmation", vm);
         }
         public async Task<ActionResult> Email(string sname, string semail, string smessage, string sphone)
         {
@@ -57,6 +58,10 @@ namespace cleaning.Controllers
         {
             return View();
         }
+        //public ActionResult Confirmation(EstimateViewModel vm)
+        //{
+        //    return View(vm);
+        //}
 
         public ActionResult About()
         {
