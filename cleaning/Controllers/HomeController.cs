@@ -34,8 +34,8 @@ namespace cleaning.Controllers
         private async Task<string> SendEmail(string sname, string semail, string smessage, string sphone)
         {
             var message = new MailMessage();
-            message.To.Add(new MailAddress("asarwebs@gmail.com"));  // replace with receiver's email id  
-            message.From = new MailAddress("asarwebs@gmail.com");  // replace with sender's email id 
+            message.To.Add(new MailAddress("asd@gmail.com"));  // replace with receiver's email id  
+            message.From = new MailAddress("asd@gmail.com");  // replace with sender's email id 
             message.Subject = "Message From" + semail;
             message.Body = "Name: " + sname + "\nFrom: " + semail + "\nPhone: " + sphone + "\n" + smessage;
             message.IsBodyHtml = true;
@@ -43,7 +43,7 @@ namespace cleaning.Controllers
             {
                 var credential = new NetworkCredential
                 {
-                    UserName = "asarwebs@gmail.com",  // replace with sender's email id 
+                    UserName = "asd@gmail.com",  // replace with sender's email id 
                     Password = ""  // replace with password 
                 };
                 smtp.Credentials = credential;

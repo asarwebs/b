@@ -10,7 +10,7 @@ namespace cleaning
 {
     public partial class Default : System.Web.UI.Page
     {
-        public string stripePublishableKey = WebConfigurationManager.AppSettings["pk_test_MjdqtaiOSqvgcP1UDyxzNaDB"];
+        public string stripePublishableKey = WebConfigurationManager.AppSettings[""];
         protected void Page_Load(object sender, EventArgs e)
         {
 
